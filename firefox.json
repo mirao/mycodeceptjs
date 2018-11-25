@@ -1,0 +1,35 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://www.rohlik.cz",
+      "browser": "firefox",
+      "desiredCapabilities": {
+        "moz:firefoxOptions": {
+          "args": [ "-headless"]
+        }
+      }      
+    },
+    "Rohlik": {
+      "require": "./rohlik_helper.js"
+    },
+    "Mochawesome": {}    
+  },
+  "include": {
+    "I": "./steps_file.js",
+    "commonPage": "./pages/common.js"
+  },
+  "mocha": {
+    "reporterOptions": {
+        "mochaFile": "output/result.xml",
+        "reportDir": "output"    
+    }
+  },
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "name": "mycodeceptjs"
+}

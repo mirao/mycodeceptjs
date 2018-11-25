@@ -1,0 +1,16 @@
+{
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "Puppeteer": {
+      "url": "https://sts-dev-app.bmd-consulting.com"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "puppeteer"
+}
