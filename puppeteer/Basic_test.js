@@ -6,7 +6,7 @@ Scenario('Test something', (I) => {
     I.amOnPage('/');
     I.see("Log-in to your account");
     I.fillField('username', 'jobr@bmd-consulting.com');
-    I.fillField('password', 'BeLAA091');
+    I.fillField('password', 'pass');
     I.click('LOGIN');
     I.waitForText('Jaromir Obr');
 });
