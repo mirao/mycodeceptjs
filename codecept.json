@@ -16,6 +16,10 @@
       "restart": true,
       "waitForTimeout": 20000
     },
+    "REST": {
+      "endpoint": "https://localhost/api",
+      "resetHeaders": false
+    },
     "Rohlik": {
       "require": "./rohlik_helper.js"
     },
