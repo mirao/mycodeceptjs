@@ -1,5 +1,5 @@
 
-type ICodeceptCallback = (i: CodeceptJS.I, commonPage:any) => void;
+type ICodeceptCallback = (i: CodeceptJS.I, commonPage:CodeceptJS.commonPage) => void;
 
 declare class FeatureConfig {
   retry(times:number): FeatureConfig
@@ -199,7 +199,8 @@ declare namespace CodeceptJS {
     grabCurrentUrl() : Promise<string>,
     grabBrowserUrl() : Promise<string>,
     dontSeeInSource(text: string) : void,
-    seeNumberOfElements(selector: string, num: number) : void,
+    seeNumberOfElements(locator: ILocator, num: number) : void,
+    seeNumberOfElements(locator: string, num: number) : void,
     seeNumberOfVisibleElements(locator: ILocator, num: number) : void,
     seeNumberOfVisibleElements(locator: string, num: number) : void,
     seeCssPropertiesOnElements(locator: ILocator, cssProperties: string) : void,
@@ -241,7 +242,8 @@ declare namespace CodeceptJS {
     waitUntilExists(locator: string, sec?: number) : void,
     waitInUrl(urlPart: string, sec?: number) : void,
     waitUrlEquals(urlPart: string, sec?: number) : void,
-    waitForText(text: string, sec?: number, aContext?: string) : void,
+    waitForText(text: string, sec?: number, context?: ILocator) : void,
+    waitForText(text: string, sec?: number, context?: string) : void,
     waitForValue(field: ILocator, value: string, sec?: number) : void,
     waitForValue(field: string, value: string, sec?: number) : void,
     waitForVisible(locator: ILocator, sec?: number) : void,
@@ -274,6 +276,16 @@ declare namespace CodeceptJS {
     runInWeb(fn: Function) : void,
     debug(msg: string) : void,
     debugSection(section: string, msg: string) : void,
+    amFollowingRequestRedirects() : void,
+    amNotFollowingRequestRedirects() : void,
+    setRequestTimeout(newTimeout: string) : void,
+    haveRequestHeaders(customHeaders: string) : void,
+    resetRequestHeaders() : void,
+    sendGetRequest(url: string, headers?: string) : void,
+    sendPostRequest(url: string, payload?: string, headers?: string) : void,
+    sendPatchRequest(url: string, payload?: string, headers?: string) : void,
+    sendPutRequest(url: string, payload?: string, headers?: string) : void,
+    sendDeleteRequest(url: string, headers?: string) : void,
     seeTitle3() : void,
     addMochawesomeContext(context: ILocator) : void,
     addMochawesomeContext(context: string) : void,

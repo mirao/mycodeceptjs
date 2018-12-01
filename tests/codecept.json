@@ -1,0 +1,25 @@
+{
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "http://www.google.com",
+      "browser": "chrome"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "tests",
+  "multiple": {
+    "dev": {  
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
+    }
+  }
+}
