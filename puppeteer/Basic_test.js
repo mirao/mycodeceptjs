@@ -1,12 +1,12 @@
 /// <reference path="./steps.d.ts" />
 
-Feature('Basic');
+Feature("Basic");
 
-Scenario('Test something', (I) => {
-    I.amOnPage('/');
+Scenario("Test something", (I) => {
+    I.amOnPage("/");
     I.see("Log-in to your account");
-    I.fillField('username', 'jobr@bmd-consulting.com');
-    I.fillField('password', 'pass');
-    I.click('LOGIN');
-    I.waitForText('Jaromir Obr');
+    I.fillField("username", "jobr@bmd-consulting.com");
+    I.fillField("password", "pass");
+    I.click("LOGIN");
+    I.waitForText("Jaromir Obr");
 });

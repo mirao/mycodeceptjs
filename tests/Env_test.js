@@ -1,6 +1,6 @@
 
-Feature('Env');
+Feature("Env");
 
-Scenario('Run page', (I) => {
-    I.amOnPage('/');
+Scenario("Run page", (I) => {
+    I.amOnPage("/");
 });
