@@ -2,12 +2,12 @@
 
 Feature("My");
 
-Scenario("One", (I) => {
-    I.say("Check something");
-    I.seeElement("#something");
-});
-
-Scenario("Two", (I) => {
-    console.log("Pass");
-    I.say("Pass");
+Scenario("One", async (I) => {
+    I.amOnPage("https://jobr2.bmdcon.com/");
+    I.click("#username");
+    await I.typeText("Ahoj");
+    await I.pressKey(["Control Left", "a", "Control Left"]);
+    await I.typeText("Cau");
+    pause();
+    
 });
