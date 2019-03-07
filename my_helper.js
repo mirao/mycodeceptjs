@@ -28,10 +28,9 @@ class My extends Helper {
      */
     async typeText(text) {
         const webDriver = this.helpers["WebDriver"];
-        const client = webDriver.browser;
         const browser = webDriver.config.browser;
         if (browser == "firefox") { // Slow down typing in Firefox
-            await client.pause(1000);
+            await webDriver.wait(1);
             for (const char of text.split("")) {
                 await this.pressKey(char);
             }
@@ -50,7 +49,7 @@ class My extends Helper {
         const browser = webDriver.config.browser;
 
         if (browser == "chrome") {
-            await client.keys(value);
+            await webDriver.pressKey(value);
             return;
         }
         const {protocol, port, hostname, path} = client.options;
