@@ -17,11 +17,14 @@ module.exports = {
     "globals": {
         "Feature": true,
         "Scenario": true,
+        "BeforeSuite": true,
         "actor": true,
         "Helper": true,
         "process": true,
         "locate": true,
-        "within": true
+        "Given": true,
+        "When": true,
+        "Then": true
     },    
     "rules": {
         "indent": [
@@ -37,6 +40,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-console": "off"
+        "no-use-before-define": "error",
+        // "no-unused-vars": ["error", { "args": "all" }],
     },
 }

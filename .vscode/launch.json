@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Debug CodeceptJS",
             "cwd": "${workspaceFolder}",
-            "args": ["run", "${relativeFile}"],
+            "args": ["run", "${relativeFile}", "--debug", "--profile", "firefox"],
             "program": "${workspaceFolder}/node_modules/codeceptjs/bin/codecept.js"
         }
     ]

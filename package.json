@@ -4,20 +4,21 @@
   "description": "CodeceptJS",
   "dependencies": {
     "babel-eslint": "^10.0.1",
-    "codeceptjs": "^1.4.6",
+    "codeceptjs": "^2.0.7",
     "codeceptjs-dbhelper": "^1.0.0",
     "database-js-mysql": "^1.1.3",
-    "eslint": "^5.12.0",
+    "eslint": "^5.14.1",
     "lodash": "^4.17.11",
     "mocha-multi": "^1.0.1",
     "mochawesome": "^3.0.3",
     "puppeteer": "^1.7.0",
     "unirest": "^0.5.1",
-    "webdriverio": "^4.13.1"
+    "webdriverio": "^5.7.1"
   },
   "devDependencies": {},
   "scripts": {
-    "eslint": "node_modules/.bin/eslint . --max-warnings=0"
+    "eslint": "node_modules/.bin/eslint . --max-warnings=0",
+    "test": "codeceptjs run -c $INIT_CWD"
   },
   "author": "Jaromir Obr"
 }
