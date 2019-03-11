@@ -13,7 +13,7 @@
     "mochawesome": "^3.0.3",
     "puppeteer": "^1.7.0",
     "unirest": "^0.5.1",
-    "webdriverio": "^5.7.1"
+    "webdriverio": "^5.7.2"
   },
   "devDependencies": {},
   "scripts": {
