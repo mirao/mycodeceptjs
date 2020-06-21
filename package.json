@@ -29,7 +29,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint"
+      "npm run eslint"
     ]
   },
   "author": "Jaromir Obr"
