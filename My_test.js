@@ -1,9 +1,6 @@
-/// <reference path="./steps.d.ts" />
+Feature("Manual");
 
-Feature("My");
-
-Scenario("One", (I) => {
-    I.amOnPage("https://codecept.io/quickstart");
-    I.fillField("#search_input_react", "WebDriver");
-    I.seeInField("#search_input_react", "WebDriver");
+Scenario("test something", (I) => {
+    I.amOnPage("https://design-system.service.gov.uk/components/button/disabled/index.html");
+    I.see("Ahoj");
 });

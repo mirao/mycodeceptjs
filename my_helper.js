@@ -3,11 +3,11 @@ class My extends Helper {
 
     // before/after hooks
     _before() {
-    // remove if not used
+        // remove if not used
     }
 
     _after() {
-    // remove if not used
+        // remove if not used
     }
 
     // add custom methods here
@@ -19,7 +19,7 @@ class My extends Helper {
    * @return {Promise<string>} Connection string
    */
     async getConnectionString() {
-        return this.config.connection; 
+        return this.config.connection;
     }
 
     /**
@@ -38,7 +38,7 @@ class My extends Helper {
             this.pressKey(text);
         }
     }
-   
+
     /**
      * 
      * @param {String|String[]} value  The sequence of keys to type. An array or string must be provided.
@@ -52,12 +52,12 @@ class My extends Helper {
             await webDriver.pressKey(value);
             return;
         }
-        const {protocol, port, hostname, path} = client.options;
+        const { protocol, port, hostname, path } = client.options;
         // Build path to Selenium REST API endpoint
         const apiUrl = `${protocol}://${hostname}:${port}${path}`;
-        
+
         const rest = this.helpers["REST"];
- 
+
         let keySequence = [];
         /**
          * replace key with corresponding unicode character
@@ -72,7 +72,7 @@ class My extends Helper {
         } else {
             throw new Error("\"keys\" command requires a string or array of strings as parameter");
         }
-              
+
         const keyDownActions = keySequence.map(value => ({
             type: "keyDown",
             value
@@ -81,7 +81,7 @@ class My extends Helper {
             type: "keyUp",
             value
         }));
-        
+
         const payload = {
             actions: [
                 {
@@ -96,6 +96,20 @@ class My extends Helper {
         const result = await rest.sendPostRequest(`${apiUrl}/session/${client.sessionId}/actions`, payload);
         const assert = require("assert");
         assert.strictEqual(result.status, 200, "Sending of keys failed");
+    }
+
+    async reloadSession() {
+        await this.helpers["WebDriver"].browser.reloadSession();
+    }
+
+    async seeElement(element) {
+        const webDriver = this.helpers["WebDriver"];
+        try {
+            await webDriver.seeElement(element);
+            return true;
+        } catch (error) {
+            return false;
+        }
     }
 }
 

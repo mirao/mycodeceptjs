@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 
 Feature("Rest");
 
@@ -9,7 +10,7 @@ Scenario("Test API", async (I) => {
         username: "username",
         password: "pass"
     }));
-    
+
     console.log(ret);
 
     const ret2 = await I.sendPostRequest("/login", {
@@ -18,7 +19,7 @@ Scenario("Test API", async (I) => {
     }, {
         "Content-Type": "application/json",
     });
-    
+
     console.log(ret2.body);
 
 });

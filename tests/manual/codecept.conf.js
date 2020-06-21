@@ -5,10 +5,7 @@ exports.config = {
         WebDriver: {
             url: "https://codecept.io",
             browser: "chrome",
-            manualStart: true
-        },
-        My: {
-            require: "./my_helper.js",
+            waitForTimeout: 5000,
         },
     },
     include: {

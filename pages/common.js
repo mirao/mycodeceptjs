@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 
-const I = actor();
+const { I } = inject();
 
 module.exports = {
 
@@ -13,12 +14,25 @@ module.exports = {
         const actTitle = await I.grabTitle();
         assert.strictEqual(actTitle, this.expTitle, "Something is bad");
     },
-    
+
+    hej() {
+        console.log("Hej");
+    },
+
     /**
      * Prints text
      * @param {String} text
      */
     printTxt2(text) {
         console.log(text.toUpperCase());
+    },
+
+    async seeElement(element) {
+        try {
+            await I.seeElement(element);
+            return true;
+        } catch (error) {
+            return false;
+        }
     }
 };

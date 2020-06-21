@@ -1,8 +1,6 @@
-
 Feature("Manual");
 
-Scenario("test something", (I) => {
-    I.startBrowser();
+Scenario("Test something", (I) => {
     I.amOnPage("/");
-    I.stopBrowser();
-});
+    I.waitForElement({ css: "input[type='textx']" });
+}).config({ browser: "firefox" });

@@ -4,7 +4,8 @@ exports.config = {
         "WebDriver": {
             "url": "https://www.rohlik.cz",
             "browser": process.profile || "chrome",
-            "restart": true,
+            windowSize: "maximize",
+            "restart": false,
             "waitForTimeout": 20000,
             "smartWait": 20000
         },
@@ -58,7 +59,8 @@ exports.config = {
     "plugins": {
         "screenshotOnFail": {
             "enabled": true
-        }
+        },
+        "allure": {}
     },
     "tests": "./*_test.js",
     "timeout": 10000,

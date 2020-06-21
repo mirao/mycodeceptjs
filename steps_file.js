@@ -2,7 +2,7 @@
 "use strict";
 // in this file you can append custom step methods to 'I' object
 
-module.exports = function() {
+module.exports = function () {
     return actor({
 
         // Define custom steps here, use 'this' to access default methods of I.
@@ -16,11 +16,12 @@ module.exports = function() {
             const title = await this.grabTitle();
             assert.strictEqual(title, "Online supermarket Rohlik.cz - nejrychlejší doručení ve městě", "Something is bad");
         },
-    
+
         /**
      * Prints text
      */
         printTxt(text) {
+            // eslint-disable-next-line no-console
             console.log(text);
         }
     });

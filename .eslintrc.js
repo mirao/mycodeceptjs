@@ -24,8 +24,10 @@ module.exports = {
         "locate": true,
         "Given": true,
         "When": true,
-        "Then": true
-    },    
+        "Then": true,
+        "inject": true,
+        "within": true
+    },
     "rules": {
         "indent": [
             "warn",

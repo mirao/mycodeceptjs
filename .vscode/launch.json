@@ -7,10 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug CodeceptJS",
+            "name": "Debug",
+            "program": "${workspaceFolder}/node_modules/codeceptjs/bin/codecept.js",
             "cwd": "${fileDirname}",
-            "args": ["run", "${fileBasename}", "--debug", "--profile", "firefox"],
-            "program": "${workspaceFolder}/node_modules/codeceptjs/bin/codecept.js"
+            "args": [
+                "run",
+                "${fileBasename}",
+                "--debug"
+            ],
         }
     ]
 }
